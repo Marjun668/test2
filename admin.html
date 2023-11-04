@@ -7,10 +7,13 @@
 </head>
 <body>
     <h1>admin Page</h1>
-    <select name="status">
+    <select name="status" id="status">
         <option value="Available">Available</option>
         <option value="Reserve">Reserve</option>
         <option value="Checked-Out">Checked-Out</option>
     </select>
+    <script type="text/javascript">
+        document.getElementById('status').value = "<?php echo $_GET['status'];?>";
+    </script>
 </body>
 </html>
