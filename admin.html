@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    
 </head>
 <body>
     <h1>admin Page</h1>
+    
     <select name="status" id="status">
-        <option value="Available">Available</option>
-        <option value="Reserve">Reserve</option>
-        <option value="Checked-Out">Checked-Out</option>
+        <option id="Available">Available</option>
+        <option id="Reserve">Reserve</option>
+        <option id="Checked-Out">Checked-Out</option>
     </select>
-    <script type="text/javascript">
-        document.getElementById('status').value = "<?php echo $_GET['status'];?>";
+    <button onclick="prev_stat()">click status</button>
+    <div>
+        <div class="bstatus1">Available</div>
+    </div>
+    <script>
+        function prev_stat(){
+        const status = document.querySelector('#status').value;
+        document.querySelector(".bstatus1").innerHTML = status}
+    </script>
+    <script>
+        const st = document.querySelector(".bstatus1").innerHTML;
+        document.querySelector('#status').value = st;
     </script>
 </body>
 </html>
