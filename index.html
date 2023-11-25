@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main page</title>
+    <script>
+        function flashImage() {
+          var img = document.getElementById('flashImg');
+          setInterval(function() {
+            img.style.visibility = (img.style.visibility == 'hidden') ? 'visible' : 'hidden';
+          }, 500); // Change the interval (in milliseconds) to adjust the flashing speed
+        }
+        function handleClick() {
+      flashImage();
+    }
+      </script>
 </head>
-<body>
+<body onload="flashImage()">
     <h1>main page</h1>
     <a href="./admin.html">admin</a>
-    
+    <img id="triggerImg" src="./Living Above the Level of Mediocrity.png" onclick="handleClick()" />
+    <img id="flashImg" src="./More than Enough.png" style="visibility: hidden;" />
 </body>
 </html>
